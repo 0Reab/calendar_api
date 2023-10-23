@@ -43,6 +43,16 @@ row_1 = [random.randrange(1,4) for i in range(1,4)]
 row_2 = [random.randrange(1,4) for i in range(1,4)]
 row_3 = [random.randrange(1,4) for i in range(1,4)]
 
+for i in row_1:
+    result_1 = 0
+    result_1 += i * len(row_1)
+for i in row_2:
+    result_2 = 0
+    result_2 += i * len(row_2)
+for i in row_3:
+    result_3 = 0
+    result_3 += i * len(row_3)
+
 
 print(balance)
 print(bet)
