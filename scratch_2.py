@@ -3,6 +3,15 @@ bet = 0
 valid_bet = False
 valid_deposit = False
 
+def is_deposit_valid(valid_deposit):
+    valid_deposit = False
+    try:
+        balance = int(deposit)
+        valid_deposit = True
+    except:
+        valid_deposit = False
+        print("Invalid deposit.")
+        deposit = input("Try depositing again: ")
 
 
 while valid_deposit == False:
@@ -20,7 +29,7 @@ if balance <= 0:
 
 bet_amount = input("Bet amount: ")
 
-while valid_deposit == False:
+while valid_bet == False:
     try:
         bet = int(bet_amount)
         valid_deposit = True
