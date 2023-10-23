@@ -1,33 +1,46 @@
-balance = 0
+deposit = input("Deposit amount: ")
 bet = 0
 valid_bet = None
+valid_deposit = False
 
-def deposit(amount):
+while valid_deposit == False:
     try:
-        balance = int(amount)
+        balance = int(deposit)
+        valid_deposit = True
     except:
+        valid_deposit = False
         print("Invalid deposit.")
-    if balance <= 0:
-        print("Balance is 0")
+        deposit = input("Try depositing again: ")
+
+if balance <= 0:
+    print("Balance is 0")
 
 
-def bet(bet_amount):
-    if bet_amount < balance:
-        valid_bet = False
-        print("Insuficient funds.")
+bet_amount = input("Bet amount: ")
 
-    if bet_amount <= 0:
-        valid_bet = False
+
+if bet_amount:
+
+    try:
+        bet = int(bet_amount)
+    except:
         print("Invalid bet.")
 
-    else:
-        bet = bet_amount
-        valid_bet = True
-        print("Bet placed.")
+if bet < balance:
+    valid_bet = False
+    print("Insuficient funds.")
+
+if bet <= 0:
+    valid_bet = False
+    print("Invalid bet.")
+
+else:
+    valid_bet = True
+
+if valid_bet == True:
+    print("Bet placed.")
 
 
-deposit(input("Deposit amount: "))
-bet(input("Bet amount: "))
 
 print(balance)
 print(bet)
