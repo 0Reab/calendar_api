@@ -1,7 +1,9 @@
 deposit = input("Deposit amount: ")
 bet = 0
-valid_bet = None
+valid_bet = False
 valid_deposit = False
+
+
 
 while valid_deposit == False:
     try:
@@ -18,17 +20,18 @@ if balance <= 0:
 
 bet_amount = input("Bet amount: ")
 
-
-if bet_amount:
-
+while valid_deposit == False:
     try:
         bet = int(bet_amount)
+        valid_deposit = True
     except:
         print("Invalid bet.")
+        bet = input("Try betting again: ")
 
 if bet < balance:
     valid_bet = False
     print("Insuficient funds.")
+
 
 if bet <= 0:
     valid_bet = False
