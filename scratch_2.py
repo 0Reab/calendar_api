@@ -1,3 +1,5 @@
+import random
+
 deposit = input("Deposit amount: ")
 bet = 0
 valid_bet = False
@@ -22,26 +24,24 @@ while valid_bet == False:
     try:
         bet = int(bet_amount)
         valid_bet = True
-        print("Bet is valid.")
     except:
+        valid_bet = False
         print("Invalid bet.")
         bet = input("Try betting again: ")
 
-if bet < balance:
+if bet > balance:
     valid_bet = False
     print("Insuficient funds.")
 
 
+
 if bet <= 0:
     valid_bet = False
-    print("Invalid bet.")
+    print("Can bet 0 or lower.")
 
-else:
-    valid_bet = True
-
-if valid_bet == True:
-    print("Bet placed.")
-
+row_1 = [random.randrange(1,4) for i in range(1,4)]
+row_2 = [random.randrange(1,4) for i in range(1,4)]
+row_3 = [random.randrange(1,4) for i in range(1,4)]
 
 
 print(balance)
