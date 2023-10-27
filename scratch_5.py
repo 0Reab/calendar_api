@@ -1,9 +1,7 @@
 mistakes = []
 file = open('chess.txt','w')
 running = True
-
-while running:
-    print("1 - time\n"
+instructions = ("1 - time\n"
           "2 - my tactic\n"
           "3 - opponent tactic\n"
           "4 - endgame\n"
@@ -13,25 +11,29 @@ while running:
           "8 - bad calculation\n"
           "9 - failed attack\n"
           "q - SAVE & QUIT\n")
-    if input()== "1":
+
+print(instructions)
+while running == True:
+    choice = input()
+    if choice== "1":
         mistakes.append("time")
-    if input()== "2":
+    elif choice== "2":
         mistakes.append("my tactic")
-    if input()== "3":
+    elif choice== "3":
         mistakes.append("opponent tactic")
-    if input()== "4":
+    elif choice== "4":
         mistakes.append("endgame")
-    if input()== "5":
+    elif choice== "5":
         mistakes.append("opening")
-    if input()== "6":
+    elif choice== "6":
         mistakes.append("queen hang")
-    if input()== "7":
+    elif choice== "7":
         mistakes.append("free piece")
-    if input()== "8":
+    elif choice== "8":
         mistakes.append("bad calculation")
-    if input()== "9":
+    elif choice== "9":
         mistakes.append("failed attack")
-    if input()== "q":
+    elif choice== "q":
         for i in mistakes:
             file.write(i + "\n")
         file.close()
