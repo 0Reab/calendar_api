@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 mistakes = []
 file = open('chess.txt','w')
 running = True
@@ -10,7 +13,8 @@ instructions = ("1 - time\n"
           "7 - free piece\n"
           "8 - bad calculation\n"
           "9 - failed attack\n"
-          "q - SAVE & QUIT\n")
+          "q - SAVE & QUIT\n"
+          "s - SHOW PLOT\n")
 
 print(instructions)
 while running == True:
@@ -33,6 +37,10 @@ while running == True:
         mistakes.append("bad calculation")
     elif choice== "9":
         mistakes.append("failed attack")
+    elif choice== "s":
+        y = np.array(mistakes)
+        plt.hist(y)
+        plt.show()
     elif choice== "q":
         for i in mistakes:
             file.write(i + "\n")
