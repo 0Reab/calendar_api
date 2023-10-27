@@ -1,5 +1,5 @@
 mistakes = []
-
+file = open('chess.txt','w')
 running = True
 
 while running:
@@ -30,3 +30,8 @@ while running:
         mistakes.append("bad calculation")
     if input("9"):
         mistakes.append("failed attack")
+    if input("q"):
+        for i in mistakes:
+            file.write(i + "\n")
+        file.close()
+        running = False
